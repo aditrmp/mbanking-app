@@ -1,0 +1,40 @@
+-- mbanking_app.balance_tbl definition
+
+CREATE TABLE `balance_tbl` (
+  `id` bigint NOT NULL,
+  `account_number` varchar(255) NOT NULL,
+  `balance` bigint NOT NULL,
+  `updated_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+-- mbanking_app.trx_tbl definition
+
+CREATE TABLE `trx_tbl` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255) NOT NULL,
+  `balance_per_trx` bigint NOT NULL,
+  `trx_ammount` bigint NOT NULL,
+  `trx_text` varchar(255) NOT NULL,
+  `trx_timestamp` timestamp NOT NULL,
+  `trx_type` char(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+-- mbanking_app.user_tbl definition
+
+CREATE TABLE `user_tbl` (
+  `id` bigint NOT NULL,
+  `account_number` varchar(255) NOT NULL,
+  `user_first_name` varchar(255) NOT NULL,
+  `is_active` bit(1) NOT NULL,
+  `user_last_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
